@@ -1,0 +1,1 @@
+project.Variables["proxy"].Value = ZennoPoster.GetProxy("Имя правила проксичекера", true);

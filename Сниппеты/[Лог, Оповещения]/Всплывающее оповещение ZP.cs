@@ -1,0 +1,1 @@
+Global.SpecialForms.AlertNotificator.Instance.DisplayAlert("Заголовок","Текст сообщения", null, 10000);

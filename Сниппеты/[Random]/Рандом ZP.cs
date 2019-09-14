@@ -1,0 +1,1 @@
+Global.Classes.rnd.Next(1000, 8000);

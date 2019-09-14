@@ -1,0 +1,1 @@
+ZennoPoster.ValidateEmail("email", "пароль", "прокси");

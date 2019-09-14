@@ -1,0 +1,2 @@
+if(((ZennoLab.InterfacesLibrary.ProjectModel.Collections.IContextExt)project.Context).IsInterrupted) throw new Exception("Прерывание в ZP");
+if(Global.Variables.IsProjectMaker && !Global.Variables.IsDebugMode) throw new Exception("Прерывание в PM");
