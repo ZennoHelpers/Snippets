@@ -1,18 +1,15 @@
 // --- ФОРМАТИРОВАНИЕ ВАЛИДНОГО JSON --- //
+// --- БЕЗ ИСПОЛЬЗОВАНИЯ NEWTON.JSON --- //
 
 // GAC
-System.Web.Extensions
+// System.Web.Extensions - [добавить в GAC]
 
 // USINGS
-using System.Web.Script.Serialization;
+// using System.Web.Script.Serialization; - [добавить в Usings в OwnCode]
+// using ZennoHelpers; - [добавить в Usings в OwnCode]
 
-// ВЫЗОВ ИЗ КУБИКА
-JavaScriptSerializer js = new JavaScriptSerializer();  
-//string jsonString =  js.Serialize(whatToSerialize); // Валидный не форматированный JSON
-//string jsonFormatted = new JsonFormatter(jsonString).Format();
-
-// ОБЩИЙ КОД
-namespace ScytaleC.PacketDecoders
+// ОБЩИЙ КОД - [добавить в OwnCode]
+namespace ZennoHelpers
 {
     public class StringWalker
     {
@@ -175,3 +172,55 @@ namespace ScytaleC.PacketDecoders
         }
     }
 }
+
+// ВЫЗОВ ИЗ КУБИКА
+string unformattedJson = "{\"Crows\":{\"players\":{\"Ben\":{\"position\":\"1B\"},\"Ty\":{\"position\":\"2B\"}}},\"Pigeons\":{\"players\":{\"Bill\":{\"position\":\"1B\"},\"Tim\":{\"position\":\"2B\"}}},\"Seagulls\":{\"players\":{\"Bob\":{\"position\":\"1B\"},\"Tom\":{\"position\":\"2B\"}}}}";
+
+JavaScriptSerializer js = new JavaScriptSerializer();  
+return new JsonFormatter(unformattedJson).Format(); // Валидный не форматированный JSON
+
+//Ожидаемый результат:
+//{
+//    "Crows":
+//    {
+//        "players":
+//        {
+//            "Ben":
+//            {
+//                "position":"1B"
+//            },
+//            "Ty":
+//            {
+//                "position":"2B"
+//            }
+//        }
+//    },
+//    "Pigeons":
+//    {
+//        "players":
+//        {
+//            "Bill":
+//            {
+//                "position":"1B"
+//            },
+//            "Tim":
+//            {
+//                "position":"2B"
+//            }
+//        }
+//    },
+//    "Seagulls":
+//    {
+//        "players":
+//        {
+//            "Bob":
+//            {
+//                "position":"1B"
+//            },
+//            "Tom":
+//            {
+//                "position":"2B"
+//            }
+//        }
+//    }
+//}
