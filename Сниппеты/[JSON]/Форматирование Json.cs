@@ -2,10 +2,11 @@
 // --- БЕЗ ИСПОЛЬЗОВАНИЯ NEWTON.JSON --- //
 
 // GAC
-// System.Web.Extensions - [добавить в GAC в ZennoPoster]
+// System.Web.Extensions - [добавить в GAC]
 
 // USINGS
 // using System.Web.Script.Serialization; - [добавить в Usings в OwnCode]
+// using ZennoHelpers; - [добавить в Usings в OwnCode]
 
 // ОБЩИЙ КОД - [добавить в OwnCode]
 namespace ZennoHelpers
