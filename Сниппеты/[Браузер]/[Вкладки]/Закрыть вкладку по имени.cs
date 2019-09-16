@@ -1,0 +1,1 @@
+instance.GetTabByAddress("popup").Close();

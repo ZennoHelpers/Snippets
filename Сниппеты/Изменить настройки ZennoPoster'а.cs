@@ -1,0 +1,1 @@
+Global.GlobalSettings.Settings.WriteSetting("ZennoPoster", "Log", "MaxCountForGuid", 10);

@@ -1,0 +1,1 @@
+return Global.GlobalSettings.TrashFolder;

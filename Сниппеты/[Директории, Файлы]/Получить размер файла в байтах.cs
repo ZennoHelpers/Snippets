@@ -1,0 +1,1 @@
+return new System.IO.FileInfo(project.Variables["Path"].Value).Length.ToString();

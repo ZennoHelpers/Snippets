@@ -1,0 +1,1 @@
+instance.SetBrowserPreference("media.wmf.enabled", true);
