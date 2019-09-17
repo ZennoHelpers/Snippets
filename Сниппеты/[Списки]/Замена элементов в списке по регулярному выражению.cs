@@ -9,13 +9,13 @@ var parserRegex = new Regex("\\d{1,2}");
 lock(SyncObjects.ListSyncer)
 {
 	// Пробегаемся по списку
-    for(int i=0; i < sourceList.Count; i++)
-    {
+	for(int i=0; i < sourceList.Count; i++)
+	{
 		// Если элемент соответствует регулярному выражению
-        if (parserRegex.IsMatch(sourceList[i]))
-        {
+		if (parserRegex.IsMatch(sourceList[i]))
+		{
 			// Заменяем текущий элемент на REPLACED
-            sourceList[i]= "REPLACED";
-        }
-    }
+			sourceList[i]= "REPLACED";
+		}
+	}
 }
