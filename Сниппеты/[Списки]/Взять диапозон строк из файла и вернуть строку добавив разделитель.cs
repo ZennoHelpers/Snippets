@@ -13,8 +13,8 @@ string path = project.Variables["pathToKeyWordFile"].Value;
 тест_7
 */
 
-// создаём список всех строк
-var lines = File.ReadAllLines(path);
+// создаём список со строками
+List<string> lines = File.ReadAllLines(path).ToList();
 
 // возвращаем ключевые слова через ";" в указанном диапазоне от 3 до 6
 // т.е. начиная с 2-го индекса в количестве 4 штуки
