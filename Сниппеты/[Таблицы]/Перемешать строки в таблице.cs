@@ -6,4 +6,6 @@ while(table.RowCount > 0){
 }
 tmplist.Shuffle();
 foreach(IEnumerable<string> list in tmplist)
+{
 	table.AddRow(list);
+}

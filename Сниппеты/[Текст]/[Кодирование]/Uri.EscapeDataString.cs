@@ -1,1 +1,1 @@
-Uri.EscapeDataString("text")
+return Uri.EscapeDataString("text")
