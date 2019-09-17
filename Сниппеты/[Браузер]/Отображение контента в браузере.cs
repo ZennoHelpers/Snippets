@@ -1,2 +1,2 @@
 // После установки, необходимо переоткрытие вкладки
-UseBrowserWithoutContent {get; set;}
+instance.UseBrowserWithoutContent = true; // false - вернуть отображение страницы

@@ -1,9 +1,9 @@
-SyncObjects.InputSyncer
-SyncObjects.ListSyncer
-SyncObjects.TableSyncer
+SyncObjects.InputSyncer // для ввода
+SyncObjects.ListSyncer // для списков
+SyncObjects.TableSyncer // для таблиц
 
 // Например:
 lock(SyncObjects.TableSyncer)
 {
-    // Тут блокируемый код, например, работы с таблицей, чей привязанный файл общий между шаблонами
+    // Тут блокируемый код записи/чтения таблицы, чей привязанный файл общий между шаблонами
 }
