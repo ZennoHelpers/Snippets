@@ -1,4 +1,4 @@
-// бепмсрэ йнкхвеярбн щкелемрнб б яохяйе опнейрю
+// п▓п∙п═п²пёп╒п╛ п п·п⌡п≤п╖п∙п║п╒п▓п· п╜п⌡п∙п°п∙п²п╒п·п▓ п▓ п║п÷п≤п║п п∙ п÷п═п·п∙п п╒п░
 
 IZennoList sourceLst = project.Lists["SourceList"];
 return sourceLst.Count.ToString();
