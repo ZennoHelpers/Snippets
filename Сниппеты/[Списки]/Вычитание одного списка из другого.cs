@@ -14,8 +14,5 @@ lock(SyncObjects.ListSyncer)
 {
 	List<string> exclude = new List<string>();
 	exclude = sourceList.Except(blackList).ToList();
-	foreach(string data in exclude)
-	{
-		resultList.Add(data);
-	}
+	resultList.AddRange(exclude);
 }
