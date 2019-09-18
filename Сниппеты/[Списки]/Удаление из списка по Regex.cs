@@ -15,10 +15,10 @@ lock(SyncObjects.ListSyncer)
     {
 		// читаем строку из списка
 		var str = sourceList[i];
-        // проверяем строку регулярным выражением, если есть совпадение удаляем
-        if (parserRegex.IsMatch(str))
+		// проверяем строку регулярным выражением, если есть совпадение удаляем
+		if (parserRegex.IsMatch(str))
 		{
-            sourceList.RemoveAt(i);
+			sourceList.RemoveAt(i);
 		}
-    }
+	}
 }
