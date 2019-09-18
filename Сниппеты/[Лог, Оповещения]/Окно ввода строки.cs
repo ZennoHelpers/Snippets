@@ -1,5 +1,5 @@
-//окно с вводом текста и кнопкой ОК 
-//предварительно нужно создать в прокте переменную answer
+//Окно с вводом текста и кнопкой ОК 
+//Предварительно нужно создать в проекте переменную answer
 var dialogForm = new System.Windows.Forms.Form { Size = new Size(300, 200), ShowIcon = false, Name = "DialogForm", Text = @"Тупо текст",
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog, MinimizeBox = false, MaximizeBox = false };
 //В данной строке можем поменять на нужный нам текст , для наших потребностей
