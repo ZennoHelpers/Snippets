@@ -1,6 +1,15 @@
 ﻿/* ПОИСК В СПИСКЕ ПО РЕГУЛЯРНОМУ ВЫРАЖЕНИЮ
 И КОПИРОВАНИЕ РЕЗУЛЬТАТОВ В ДРУГОЙ  */
 
+// Добавить в OwnCode (Общий код) в конце:
+/* namespace ZennoHelpers
+{
+	public class Locker
+	{
+		public static object CustomListSyncer = new object();
+	}
+} */
+
 // берем регулярное выражение для парсинга из переменной
 var parserRegexPattern = project.Variables["listSearchRegex"].Value;
 var parserRegex = new System.Text.RegularExpressions.Regex(parserRegexPattern);
@@ -12,7 +21,7 @@ var sourceList = project.Lists["SourceList"];
 var destList = project.Lists["OutputList"];
 
 // ищем в каждой строчке в списке
-lock(SyncObjects.ListSyncer)
+lock(ZennoHelpers.Locker.CustomListSyncer)
 {
     for(int i=0; i < sourceList.Count; i++)
     {

@@ -1,5 +1,14 @@
 // УДАЛЕНИЕ ИЗ СПИСКА ПО REGEX //
 
+// Добавить в OwnCode (Общий код) в конце:
+/* namespace ZennoHelpers
+{
+	public class Locker
+	{
+		public static object CustomListSyncer = new object();
+	}
+} */
+
 // берем регулярное выражение для парсинга из переменной
 var parserRegexPattern = project.Variables["listSearchRegex"].Value;
 var parserRegex = new System.Text.RegularExpressions.Regex(parserRegexPattern);
@@ -8,8 +17,9 @@ var parserRegex = new System.Text.RegularExpressions.Regex(parserRegexPattern);
 var sourceList = project.Lists["SourceList"];
 
 int lstCount = sourceList.Count;
+
 // ищем в каждой строчке в списке
-lock(SyncObjects.ListSyncer)
+lock(ZennoHelpers.Locker.CustomListSyncer)
 {
 	for(int i = sourceList.Count-1; i >= 0; i--)
     {
