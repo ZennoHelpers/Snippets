@@ -1,8 +1,8 @@
 //окно с вводом текста и кнопкой ОК 
-//предварительно нужно создать в прокте перемнную answer
+//предварительно нужно создать в прокте переменную answer
 var dialogForm = new System.Windows.Forms.Form { Size = new Size(300, 200), ShowIcon = false, Name = "DialogForm", Text = @"Тупо текст",
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog, MinimizeBox = false, MaximizeBox = false };
-//В данной строке можем поменять на нужній нам текст , для наших потребностей
+//В данной строке можем поменять на нужный нам текст , для наших потребностей
 var groupBox1 = new System.Windows.Forms.GroupBox { Name = "groupBox1", Text = "Вводим код СМС", Size = new Size(120, 130) };
 dialogForm.Controls.Add(groupBox1);
 groupBox1.Location = new Point (12, 12);
