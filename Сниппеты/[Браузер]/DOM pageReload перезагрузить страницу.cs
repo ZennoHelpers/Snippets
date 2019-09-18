@@ -1,5 +1,5 @@
-//мягкая перезагрузка, F5
+//РјСЏРіРєР°СЏ РїРµСЂРµР·Р°РіСЂСѓР·РєР°, F5
 instance.ActiveTab.MainDocument.EvaluateScript("window.location.reload(false)");
 
-//жёсткая перезагрузка, как Ctrl+F5
+//Р¶РµСЃС‚РєР°СЏ РїРµСЂРµР·Р°РіСЂСѓР·РєР°, РєР°Рє Ctrl+F5
 instance.ActiveTab.MainDocument.EvaluateScript("window.location.reload(true)");
