@@ -1,4 +1,4 @@
-﻿// ПРОВЕРКА СОДЕРЖИТ ЛИ СПИСОК КАКУЮ-ТО КОНКРЕТНУЮ СТРОКУ
+// ПРОВЕРКА СОДЕРЖИТ ЛИ СПИСОК КАКУЮ-ТО КОНКРЕТНУЮ СТРОКУ
 
 // Добавить в OwnCode (Общий код) в конце:
 /* namespace ZennoHelpers
@@ -18,15 +18,17 @@ var sourceList = project.Lists["SourceList"];
 lock(ZennoHelpers.Locker.CustomListSyncer)
 {
 	// ищем в каждой строчке в списке
-    for(int i=0; i < sourceList.Count; i++)
-    {
-        // читаем строку из списка
-        var str = sourceList[i];
+	for(int i=0; i < sourceList.Count; i++)
+	{
+		// читаем строку из списка
+		var str = sourceList[i];
 		
-        // проверяем содержание текста в строке, если есть совпадение возвращаем "yes"
-        if (str.Contains(textContains))
-            return "yes";
-    }
+		// проверяем содержание текста в строке, если есть совпадение возвращаем "yes"
+		if (str.Contains(textContains))
+		{
+			return "yes";
+		}
+	}
 }
 
 // если ничего не нашли возвращаем "no"

@@ -1,4 +1,4 @@
-﻿/* ПОИСК В СПИСКЕ ПО РЕГУЛЯРНОМУ ВЫРАЖЕНИЮ
+/* ПОИСК В СПИСКЕ ПО РЕГУЛЯРНОМУ ВЫРАЖЕНИЮ
 И КОПИРОВАНИЕ РЕЗУЛЬТАТОВ В ДРУГОЙ  */
 
 // Добавить в OwnCode (Общий код) в конце:
@@ -23,16 +23,18 @@ var destList = project.Lists["OutputList"];
 // ищем в каждой строчке в списке
 lock(ZennoHelpers.Locker.CustomListSyncer)
 {
-    for(int i=0; i < sourceList.Count; i++)
-    {
-        // читаем строку из списка
-        var str = sourceList[i];
-        // проверяем строку регулярным выражением, если есть совпадение кладем результат во второй список
-        if (parserRegex.IsMatch(str))
-        {
-            destList.Add(str);      
-        }
-    }
+	for(int i=0; i < sourceList.Count; i++)
+	{
+		// читаем строку из списка
+		var str = sourceList[i];
+		
+		// проверяем строку регулярным выражением, если есть совпадение кладем результат во второй список
+		
+		if (parserRegex.IsMatch(str))
+		{
+			destList.Add(str);
+		}
+	}
 	
 	// return string.Join(", ", destList); - убрать комментарий, если нужно вернуть список в переменную с разделителем.
 }
