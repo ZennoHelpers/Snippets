@@ -11,7 +11,7 @@ int lstCount = sourceList.Count;
 // ищем в каждой строчке в списке
 lock(SyncObjects.ListSyncer)
 {
-    for(int i = sourceList.Count-1; i >= 0; i--)
+	for(int i = sourceList.Count-1; i >= 0; i--)
     {
 		// читаем строку из списка
 		var str = sourceList[i];
