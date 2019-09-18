@@ -22,7 +22,7 @@ int lstCount = sourceList.Count;
 lock(ZennoHelpers.Locker.CustomListSyncer)
 {
 	for(int i = sourceList.Count-1; i >= 0; i--)
-    {
+	{
 		// читаем строку из списка
 		var str = sourceList[i];
 		// проверяем строку регулярным выражением, если есть совпадение удаляем
