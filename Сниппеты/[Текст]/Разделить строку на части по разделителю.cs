@@ -6,8 +6,8 @@
 List<string> ipPortAsList = new List<string>(
 	project.Variables["AccountData"].Value.Split(new string[] { ":" },
 	StringSplitOptions.RemoveEmptyEntries));
-	
-		// перебор листа
+
+// перебор листа
 foreach (string data in ipPortAsList)
 {
 	// какой-то код
