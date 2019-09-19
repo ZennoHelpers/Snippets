@@ -1,6 +1,6 @@
 // ПРЕОБРАЗОВАНИЕ ТЕКСТА В ИЗОБРАЖЕНИЕ
 
-//ДОБАВИТЬ ДИРЕКТИВЫ USING : Директивы Using
+//ДОБАВИТЬ ДИРЕКТИВЫ USING
 
 //using System.Drawing;
 //using System.Drawing.Text;

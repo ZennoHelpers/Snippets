@@ -33,7 +33,7 @@ for (int i = 0; i < words.Length; i++)
 	if (i == r)
 	{
 		// вставляем случайный ключ из списка
-		result += keywords.GetItem("random1(1-end)") + " " + words[i] + " ";
+		result += keywords[rnd.Next(keywords.Count)] + " " + words[i] + " ";
 		r = r + rnd.Next(min, max);
 	}
 	
