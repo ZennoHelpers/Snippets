@@ -1,0 +1,1 @@
+return System.Net.Dns.GetHostAddresses("www.google.com")[0];
