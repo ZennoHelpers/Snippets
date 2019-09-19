@@ -5,5 +5,3 @@
 string path = project.Variables["filePath"].Value; 
 var lines = System.IO.File.ReadAllLines(path).Where(arg => !string.IsNullOrWhiteSpace(arg));
 System.IO.File.WriteAllLines(path, lines);
-return 0;
- 
