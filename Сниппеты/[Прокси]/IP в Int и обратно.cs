@@ -8,7 +8,7 @@
 public class CommonCode {
     public static int IpToInt (string ip){
         string[] arr = ip.Trim().Split('.');
-        if( ip.Split('.').Length == 4 ) {
+        if( arr.Length == 4 ) {
             int a = int.Parse(arr[0]) * 256 * 256 * 256;
             int b = int.Parse(arr[1]) * 256 * 256;
             int c = int.Parse(arr[2]) * 256;
