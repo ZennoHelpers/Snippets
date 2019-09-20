@@ -1,30 +1,41 @@
 // Теория http://php.spb.ru/php/ip.html
 // Переписал на C#
 
-// Забрасываем в общий код и вызываем 
-// return CommonCode.IpToInt("192.168.1.1"); // IP в число
-// return CommonCode.IntToIp("1215161"); // Число в IP
+// IP занимает 4 байта (255.255.255.255), значит число должно быть uint (int слишком мало)
 
+/*
+Пример вызова в кубике:
+string ip = "192.168.1.1";
+
+uint int_ip =  CommonCode.IpToInt(ip); // IP в число
+project.SendInfoToLog(string.Format(@"IP={0} int={1}",ip, int_ip));
+
+ip = CommonCode.IntToIp(int_ip); // число в IP
+project.SendInfoToLog(string.Format(@"uint={0} IP={1} ",int_ip, ip));
+
+*/
+
+// Добавляем в общий код
 public class CommonCode {
-    public static int IpToInt (string ip){
-        string[] arr = ip.Trim().Split('.');
-        if( arr.Length == 4 ) {
-            int a = int.Parse(arr[0]) * 256 * 256 * 256;
-            int b = int.Parse(arr[1]) * 256 * 256;
-            int c = int.Parse(arr[2]) * 256;
-            int d = int.Parse(arr[3]);
-            return a+b+c+d;
-        }
-        else{
-            return 0;
-        }
-    }
-    public static string IntToIp (int ip){
-        int z = (int) Math.Pow(2, Math.Pow(2, 3));
-        int a = ip/z/z/z;
-        int b = ( ip - a*z*z*z )/z/z;
-        int c = (( ip - a*z*z*z - b*z*z)/z);
-        int d = ( ip - a * z*z*z - b * z*z - c * z); 
-        return string.Format("{0}.{1}.{2}.{3}", a,b,c,d);
-    }
+	public static uint IpToInt (string ip){
+		string[] absd = ip.Trim().Split('.');
+			if( absd.Length == 4 ) {				
+				uint a = uint.Parse(absd[0]) * 256 * 256 * 256;
+				uint b = uint.Parse(absd[1]) * 256 * 256;
+				uint c = uint.Parse(absd[2]) * 256;
+				uint d = uint.Parse(absd[3]);
+				return a+b+c+d;
+	        }
+			else{
+				return 0;
+			}
+	}
+	public static string IntToIp (uint ip){
+		int z = (int) Math.Pow(2, Math.Pow(2, 3));
+		long a = ip/z/z/z;
+		long b = ( ip - a*z*z*z )/z/z;
+		long c = (( ip - a*z*z*z - b*z*z)/z);
+		long d = ( ip - a * z*z*z - b * z*z - c * z); 
+		return string.Format("{0}.{1}.{2}.{3}", a,b,c,d);
+	}
 }
