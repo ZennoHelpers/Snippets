@@ -1,5 +1,5 @@
 // берем из переменной текст, который надо искать
-var textContains = project.Variables["tmp_city"].Value;
+var textContains = project.Variables["tmpCity"].Value;
 // получаем список, в котором будем искать
 var sourceList = project.Lists["city"];
 // ищем в каждой строчке в списке

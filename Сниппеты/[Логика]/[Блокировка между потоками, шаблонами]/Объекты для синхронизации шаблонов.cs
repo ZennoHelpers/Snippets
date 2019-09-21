@@ -1,6 +1,6 @@
-SyncObjects.InputSyncer // для ввода
-SyncObjects.ListSyncer // для списков
-SyncObjects.TableSyncer // для таблиц
+//SyncObjects.InputSyncer - для ввода
+//SyncObjects.ListSyncer - для списков
+//SyncObjects.TableSyncer - для таблиц
 
 // Например:
 lock(SyncObjects.TableSyncer)
