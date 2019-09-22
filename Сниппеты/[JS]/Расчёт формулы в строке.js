@@ -1,1 +1,1 @@
-Math.round(eval('5+0.01+0.34-5*1') * 100) / 100;
+Math.round(eval('{-Variable.text-}') * 100) / 100; // text = 5+0.01+0.34-5*1

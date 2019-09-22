@@ -1,8 +1,8 @@
 // Список кодировок https://docs.microsoft.com/ru-ru/dotnet/api/system.text.encoding
 
 string text = "Текст";
-string initial = "utf-8";
-string target = "cp866";
+string initial = "utf-8"; // исходная кодировка
+string target = "cp866"; // требуемая на выходе кодировка
 
 Encoding enc1 = Encoding.GetEncoding(initial);
 Encoding enc2 = Encoding.GetEncoding(target);

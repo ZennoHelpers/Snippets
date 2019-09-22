@@ -3,3 +3,5 @@ let scrollHeight = Math.max(
   document.body.offsetHeight, document.documentElement.offsetHeight,
   document.body.clientHeight, document.documentElement.clientHeight
 );
+
+return scrollHeight;
