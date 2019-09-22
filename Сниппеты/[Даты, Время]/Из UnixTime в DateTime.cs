@@ -1,7 +1,7 @@
 //ИЗ UNIXTIME В DATETIME
 
 // переменная с UnixTime
-long unixTime = int.Parse(project.Variables["unixTime"].Value);
+long unixTime = long.Parse(project.Variables["unixTime"].Value);
 
 DateTime dateTime = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).AddSeconds(unixTime).ToLocalTime();
 

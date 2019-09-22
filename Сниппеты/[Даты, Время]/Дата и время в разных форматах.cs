@@ -28,6 +28,6 @@ DateTime.Now.ToString("h:mm tt") - 5:50 AM
 DateTime.Now.ToString("HH:mm:ss") - 05:50:06
 DateTime.Now.ToString("yyyy MMMM") - 2015 May
 
-Другие шаблоны смотрите https://docs.microsoft.com
+Другие форматы смотрите здесь: https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
 
 */
