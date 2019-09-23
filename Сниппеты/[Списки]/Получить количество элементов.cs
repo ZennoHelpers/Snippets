@@ -1,0 +1,1 @@
+return project.Lists["Список"].Count.ToString();
