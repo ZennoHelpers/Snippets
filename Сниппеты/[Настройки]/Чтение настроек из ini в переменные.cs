@@ -1,3 +1,6 @@
+//Чтение первичных настроек из ини файла с созданием нужных переменных при первом запуске
+//https://zennolab.com/discussion/threads/chtenie-parametrov-v-avtosozdavaemye-peremennye-iz-ini-fajla-odnim-snippetom.41824/
+
 //берем имя проекта и заменяем расширение на ini
 string config_file = project.Name.Replace("xmlz","ini");
 //если несколько проектов юзают один и тот же конфиг
