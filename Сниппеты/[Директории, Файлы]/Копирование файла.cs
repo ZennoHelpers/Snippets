@@ -9,12 +9,8 @@ string to_file_name = @"result.docx";
 // путь до текущей директории проекта
 string directory = project.Directory;
 
-// т.к. в пути могут быть различные символы, для упрощения используем Path.Combine
-string[] fromPaths = {directory, from_file_name};
-string from = Path.Combine(fromPaths);
-
-string[] toPaths = {directory, to_file_name};
-string to = Path.Combine(toPaths);
+string from = Path.Combine(directory, from_file_name);
+string to = Path.Combine(directory, to_file_name);
 
 // копирование файла
 File.Copy(from, to);
