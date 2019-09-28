@@ -1,5 +1,9 @@
 // СОЗДАНИЕ ФОРМЫ С ПОЛЕМ ВВОДА
 
+/* В случае нажатия "ок"- текст из поля вводапопадет в результирующую переменную,
+а если будет нажата отмена, то вернется пустая строка
+*/
+
 // создаём форму с указанным значением
 var dialogForm = new System.Windows.Forms.Form
 {
@@ -10,16 +14,16 @@ var dialogForm = new System.Windows.Forms.Form
 // поле ввода
 var textBox = new System.Windows.Forms.TextBox { Name = "InputText", Size = new Size(410, 20) };
 
-// кладём не форму
+// кладём на форму
 dialogForm.Controls.Add(textBox);
 
 // положение на форме
 textBox.Location = new Point(12, 12);
 
-// кнопка отмены
+// кнопка ОК
 var okButton = new System.Windows.Forms.Button { Name = "OKButton", Text = @"OK", Size = new Size(75, 23) };
 
-// кладём не форму
+// кладём на форму
 dialogForm.Controls.Add(okButton);
 
 // положение на форме
@@ -31,7 +35,7 @@ okButton.Click += (delegate { dialogForm.DialogResult = System.Windows.Forms.Dia
 // кнопка отмены
 var cancelButton = new System.Windows.Forms.Button { Name = "CancelButton", Text = @"Отмена", Size = new Size(75, 23)};
 
-// кладём не форму
+// кладём на форму
 dialogForm.Controls.Add(cancelButton);
 
 // положение на форме
@@ -45,4 +49,5 @@ var dialogResult = dialogForm.ShowDialog();
 
 // если не было отмены диалога
 if (dialogResult != System.Windows.Forms.DialogResult.Cancel) return textBox.Text;
-return 0;
+
+return String.Empty;

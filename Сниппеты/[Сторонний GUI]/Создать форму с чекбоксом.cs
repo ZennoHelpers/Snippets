@@ -1,7 +1,5 @@
 // СОЗДАНИЕ ФОРМЫ С ЧЕКБОКСОМ
 
-// В GAC добавить System.Windows.Forms.dll
-
 var dialogForm = new System.Windows.Forms.Form
 {
 	Size = new Size(450, 110), ShowIcon = false, Name = "DialogForm", Text = @"Форма",
@@ -17,8 +15,16 @@ checkbox.Location = new Point(12, 12);
 checkbox.CheckedChanged += (delegate
 {
 	/* ВОТ ЗДЕСЬ ОБРАБОТКА СОБЫТИЯ Т.Е. ТЕЛО МЕТОДА. К ПРИМЕРУ */
-	if (checkbox.Checked) System.Windows.Forms.MessageBox.Show("Значение изменилось на true", "Обработка события CheckedChanged");
-	else System.Windows.Forms.MessageBox.Show("Значение изменилось на false", "Обработка события CheckedChanged");
+	if (checkbox.Checked)
+	{
+		project.Variables["checkBox"].Value = "true";
+		System.Windows.Forms.MessageBox.Show("Значение изменилось на true", "Обработка события CheckedChanged");
+	}
+	else
+	{
+		project.Variables["checkBox"].Value = "false";
+		System.Windows.Forms.MessageBox.Show("Значение изменилось на false", "Обработка события CheckedChanged");
+	}
 } );
 
 // показываем форму

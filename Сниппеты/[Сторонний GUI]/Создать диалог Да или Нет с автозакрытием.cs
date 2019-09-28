@@ -1,7 +1,5 @@
 // ОКНО С ДИАЛОГОМ "ДА" ИЛИ "НЕТ" С АВТОЗАКРЫТИЕМ
 
-// В GAC добавить System.Windows.Forms.dll
-
 // создаём форму с указанным значением
 var dialogForm = new System.Windows.Forms.Form
 {
@@ -61,8 +59,10 @@ try
 {
 	thread.Abort();
 }
-
-catch(Exception) {}
+catch(Exception)
+{
+	
+}
 
 // если не было отмены диалога
 if (dialogResult == System.Windows.Forms.DialogResult.Yes) return 1;
