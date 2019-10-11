@@ -8,9 +8,9 @@ string name = project.Variables["title"].Value;
 char replace_to = '_';
 
 // массив с недопустимыми символами в имени файла (также есть метод`Path.GetInvalidPathChars()` - для директорий)
-char[] invalidFileChars = Path.GetInvalidFileNameChars();
+IEnumerable<char> invalidFileChars = Path.GetInvalidFileNameChars();
 // в кубике "Файлы для загрузки" через запятую сделана загрузка нескольких файлов, поэтому стоит заменять этот символ тоже
-invalidFileChars = invalidFileChars.Append(',').ToArray();
+invalidFileChars = invalidFileChars.Append(',');
 
 foreach(char find in invalidFileChars) {
 	name = name.Replace(find, replace_to);
