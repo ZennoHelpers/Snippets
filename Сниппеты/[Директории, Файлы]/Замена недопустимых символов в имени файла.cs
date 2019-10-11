@@ -4,15 +4,15 @@
 // берем имя файла из Zenno-переменной title
 string name = project.Variables["title"].Value;
 
-// заменяем все недопустимые символы на следующий:
-string replace_to = "_";
+// заменяем все недопустимые символы на следующий символ
+char replace_to = '_';
 
-// массив с недопустимыми символами
-string[] arr = {
-	"\\", "/", ":", "*", "?", "\"", "<", ">", "|", // если попробовать переименовать любой файл с использованием этих символов, то Explorer выдаст ошибку и эти символы
-	"," // в кубике "Файлы для загрузки" через запятую сделана загрузка нескольких файлов, необходимо также удалять этот символ из названия файла
-};
-foreach(string find in arr) {
+// массив с недопустимыми символами в имени файла (также есть метод`Path.GetInvalidPathChars()` - для директорий)
+char[] invalidFileChars = Path.GetInvalidFileNameChars();
+// в кубике "Файлы для загрузки" через запятую сделана загрузка нескольких файлов, поэтому стоит заменять этот символ тоже
+invalidFileChars = invalidFileChars.Append(',').ToArray();
+
+foreach(char find in invalidFileChars) {
 	name = name.Replace(find, replace_to);
 }
 
