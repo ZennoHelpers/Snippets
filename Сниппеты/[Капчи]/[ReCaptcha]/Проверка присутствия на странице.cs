@@ -4,8 +4,8 @@
 * Выходит по красной ветке если рекапча не найдена.
 */
 
-if ((instance.MainTab.DomText.IndexOf("//www.google.com/recaptcha/api2/anchor") > -1) ||
-    (instance.MainTab.DomText.IndexOf("recaptcha.anchor.Main.init") > -1))
+if ((instance.ActiveTab.DomText.IndexOf("//www.google.com/recaptcha/api2/anchor") > -1) ||
+    (instance.ActiveTab.DomText.IndexOf("recaptcha.anchor.Main.init") > -1))
 {
     return "found";
 }
