@@ -1,4 +1,4 @@
-// Создаётся в начале проекта
+// Выполняется в начале проекта
 lock (project.GlobalVariables)
 {
 	// check if exists
