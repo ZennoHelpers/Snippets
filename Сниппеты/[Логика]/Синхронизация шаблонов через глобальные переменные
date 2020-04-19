@@ -1,4 +1,4 @@
-// Создаётся в начале проекта и syncObject используется как объект блокировки
+// Создаётся в начале проекта
 lock (project.GlobalVariables)
 {
 	// check if exists
@@ -12,4 +12,5 @@ lock (project.GlobalVariables)
 	}
 }
 
+// syncObject создаётся в требуемых сниппетах
 var syncObject = project.GlobalVariables["test_namespace","my_sync_object"].Value;
