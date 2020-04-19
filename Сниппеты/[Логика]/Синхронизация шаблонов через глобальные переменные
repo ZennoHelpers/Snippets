@@ -1,0 +1,15 @@
+// Создаётся в начале проекта и syncObject используется как объект блокировки
+lock (project.GlobalVariables)
+{
+	// check if exists
+	try {
+		var syncobj = project.GlobalVariables["test_namespace","my_sync_object"];
+		return syncobj.ToString();
+	} catch (KeyNotFoundException ex) {
+		// create sync object
+		object syncobj = new Object();
+		project.GlobalVariables.SetVariable("test_namespace","my_sync_object", syncobj);
+	}
+}
+
+var syncObject = project.GlobalVariables["test_namespace","my_sync_object"].Value;
