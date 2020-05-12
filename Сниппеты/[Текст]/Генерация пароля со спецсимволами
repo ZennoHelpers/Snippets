@@ -1,0 +1,32 @@
+// Генерация пароля с использованием всех типов символов. В итоговой строке будет как минимум 1 символ из каждого блока символов.
+
+int passwLength = 8;  // Длина пароля
+
+Random rnd = new Random();
+
+string[] arrDictionary = new String[4];
+arrDictionary[0] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+arrDictionary[1] = "abcdefghijklmnopqrstuvwxyz";
+arrDictionary[2] = "0123456789";
+arrDictionary[3] = "!@#$%^&*()<>-=+*/";
+
+string strSymbols = string.Join(string.Empty, arrDictionary);
+char[] arrChars = new Char[passwLength];
+for (int i = 0; i < arrChars.Length; i++)
+{
+	arrChars[i] = strSymbols[rnd.Next(strSymbols.Length)];
+}
+if (arrChars.Length>=arrDictionary.Length)
+{
+
+	for (int i = 0; i < arrDictionary.Length; i++)
+	{
+		if (arrDictionary[i]!=string.Empty)
+		{
+			arrChars[i] = Convert.ToChar(arrDictionary[i].Substring(rnd.Next(0, arrDictionary[i].Length),1));
+		}
+	}
+}
+string password = string.Join(string.Empty, arrChars.Shuffle());
+
+project.SendInfoToLog("Сгенерированный пароль: " + password);
