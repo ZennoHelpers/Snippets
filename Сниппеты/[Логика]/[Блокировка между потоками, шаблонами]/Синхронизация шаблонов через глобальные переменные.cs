@@ -1,18 +1,22 @@
 // Создание объектов синхронизации в глобальной переменной для изменения списков,
 // таблиц, других глобальных переменных и т.д. в разных шаблонах 
 
+// неймспейс и имя новой переменой для синхронизации
+string namespaceName = "test_namespace";
+string globVarName = "my_sync_object";
 
 // Выполняется в начале проекта
 lock (project.GlobalVariables)
 {
-	// check if exists
+	// проверка на существование глобальной переменной
 	try {
-		var syncobj = project.GlobalVariables["test_namespace","my_sync_object"];
-		return syncobj.ToString();
+		// попытка получения объекта (переход на catch при неудаче)
+		var syncobj = project.GlobalVariables[namespaceName, globVarName];
+		return syncobj.ToString(); // возврат его значения (отобразится в логе PM, если возможно)
 	} catch (KeyNotFoundException ex) {
-		// create sync object
+		// создание объекта синхронизации и его установка, объект может быть любым, но не должен меняться!
 		object syncobj = new Object();
-		project.GlobalVariables.SetVariable("test_namespace","my_sync_object", syncobj);
+		project.GlobalVariables.SetVariable(namespaceName, globVarName, syncobj);
 	}
 }
 
