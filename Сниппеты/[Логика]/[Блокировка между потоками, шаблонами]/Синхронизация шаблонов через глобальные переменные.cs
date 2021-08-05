@@ -14,7 +14,7 @@ lock (project.GlobalVariables)
 		var syncobj = project.GlobalVariables[namespaceName, globVarName];
 		return syncobj.ToString(); // возврат его значения (отобразится в логе PM, если возможно)
 	} catch (KeyNotFoundException ex) {
-		// создание объекта синхронизации и его установка, объект может быть любым: числом, строкой и т.д.
+		// создание объекта синхронизации и его установка, объект может быть любым, но не должен меняться!
 		object syncobj = new Object();
 		project.GlobalVariables.SetVariable(namespaceName, globVarName, syncobj);
 	}
